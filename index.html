@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <title>Mortgage Calculator</title>
+</head>
+
+<body ng-controller="MortgageController as vm">
+  <div id="width">
+    <h1>Mortgage Calculator</h1>
+    <form>
+      <div class="form-group">
+        <label for="balance">Loan Balance</label>
+        <input type="number" class="form-control" id="balance" placeholder="In US dollars" ng-model="vm.balance">
+      </div>
+      <div class="form-group">
+        <label for="Interest Rate">Interest Rate %</label>
+        <input type="number" class="form-control" id="apr" placeholder="APR" ng-model="vm.apr">
+      </div>
+      <div class="form-group">
+        <label for="term">Loan Term</label>
+        <input type="number" class="form-control" id="term" placeholder="Years" ng-model="vm.term">
+      </div>
+      <select class="form-control" ng-model="vm.select">
+        <option value=12>Monthly</option>
+        <option value=6>Bimonthly</option>
+      </select>
+
+      <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="calculateMortgage">Math</button>
+
+      <p></p>
+    </form>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
